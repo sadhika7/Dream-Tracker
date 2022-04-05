@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".DreamDetailFragment">
+
+    <EditText
+        android:id="@+id/dream_title_text"
+        android:layout_width="254dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:autofillHints=""
+        android:hint="@string/dream_title_text"
+        android:inputType="text"
+        android:padding="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dream_photo"
+        app:layout_constraintTop_toBottomOf="@+id/dream_title_label" />
+
+    <TextView
+        android:id="@+id/dream_title_label"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="254dp"
+        android:layout_height="50dp"
+        android:text="@string/dream_title_label"
+        app:layout_constraintBottom_toTopOf="@+id/dream_title_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/dream_photo" />
+
+    <CheckBox
+        android:id="@+id/dream_fulfilled_checkbox"
+        android:layout_width="106dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/dream_fulfilled_checkbox"
+        app:layout_constraintBottom_toTopOf="@+id/dream_entries_label"
+        app:layout_constraintEnd_toStartOf="@+id/dream_deferred_checkbox"
+        app:layout_constraintStart_toEndOf="@+id/dream_photo"
+        app:layout_constraintTop_toBottomOf="@+id/dream_title_text" />
+
+    <CheckBox
+        android:id="@+id/dream_deferred_checkbox"
+        android:layout_width="96dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/dream_deferred_checkbox"
+        app:layout_constraintStart_toEndOf="@+id/dream_fulfilled_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/dream_title_text" />
+
+    <TextView
+        android:id="@+id/dream_entries_label"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="380dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/dream_entries_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dream_fulfilled_checkbox" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dream_entry_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dream_entries_label"
+        tools:context=".DreamDetailFragment">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_reflection_button"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="29dp"
+        android:src="@drawable/ic_icon_add_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/dream_photo"
+        android:layout_width="120dp"
+        android:layout_height="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars"
+        android:background="@android:color/holo_blue_dark"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
